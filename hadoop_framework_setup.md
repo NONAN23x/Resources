@@ -7,11 +7,11 @@ Update your Ubuntu Machine:
 
 ### Step 2:
 Run the dependencies Installer
-`wget https://github.com/NONAN23x/Resources/dependency-installer.sh`
+`wget https://raw.githubusercontent.com/NONAN23x/Resources/main/hadoop_stuff/dependencies-install.sh | bash`
 
 ### Step 3:
 Configuration of yarn-site.xml, core-site.xml, etc, etc.
-`wget https://github.com/NONAN23x/Resources/hadoop-configure.sh`
+`wget https://raw.githubusercontent.com/NONAN23x/Resources/main/hadoop_stuff/hadoop-configure.sh | bash`
 
 ### Step 4:
 Restart your Ubuntu Machine
