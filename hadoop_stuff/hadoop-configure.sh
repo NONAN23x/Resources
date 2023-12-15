@@ -4,6 +4,9 @@
 HADOOP_VERSION="3.3.6"
 
 ### Setting up ssh client
+clear
+echo "Enter the password of hadoop account below"
+chsh -s /bin/bash
 ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 sudo chmod 640 ~/.ssh/authorized_keys

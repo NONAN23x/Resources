@@ -46,7 +46,7 @@ download_and_verify_hadoop() {
 }
 
 clear
-sleep 2
+sleep 1
 # Check if OpenSSH is installed
 if ! dpkg -l openssh-server | grep -q '^ii'; then
   echo "Installing OpenSSH..."
@@ -68,7 +68,8 @@ if ! id -u hadoop &> /dev/null; then
   echo "Creating user 'hadoop'..."
   sudo useradd -m hadoop
   sudo usermod -aG sudo hadoop
-  echo "Set a password for the account hadoop"
+  clear
+  echo "Please set a password for the hadoop account (ignore bad password warnings, if any)"
   sudo passwd hadoop
 else
   echo "User 'hadoop' already exists."
@@ -103,10 +104,10 @@ else
   echo "Temporary file /tmp/hadoop.tar.gz removed."
 fi
 
-sleep 4
+sleep 3
 clear
 echo "You will now be logged in as hadoop user please run the second script to automate hadoop configuration setup!"
-sleep 4
+sleep 3
 
 # Change User to hadoop
 sudo su - hadoop
