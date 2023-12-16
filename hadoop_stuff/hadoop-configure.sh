@@ -4,6 +4,7 @@
 HADOOP_VERSION="3.3.6"
 
 ### Setting up ssh client
+cd ~
 clear
 echo "Enter the password of hadoop account below"
 chsh -s /bin/bash
