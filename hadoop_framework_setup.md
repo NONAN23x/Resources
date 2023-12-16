@@ -24,7 +24,7 @@ Run the dependencies installer
 - This is the second part of the proccess, here configuration of yarn-site.xml, core-site.xml, mapred-site.xml, hdfs-site.xml, hadoop-env.sh would be handled automatically by the script.
 - You only need to enter your user or hadoop user's password when prompted.
 
-```wget https://raw.githubusercontent.com/NONAN23x/Resources/main/hadoop_stuff/hadoop-configure.sh && bash hadoop-configure.sh```
+```cd ~ && wget https://raw.githubusercontent.com/NONAN23x/Resources/main/hadoop_stuff/hadoop-configure.sh && bash hadoop-configure.sh```
 
 - You might be asked wheter or not you want to reformat the filesystem, in such case press Y and hit Enter
   - `Re-format filesystem in Storage Directory root= /home/hadoop/hdfs/namenode; location= null ? (Y or N) Y`
