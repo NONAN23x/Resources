@@ -55,7 +55,7 @@ sudo echo $hadoop_env_content > $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 # sudo echo $hadoop_class_path >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 
 
-xml_content="<xml version=\"1.0\" encoding=\"UTF-8\"?>
+xml_content="<xml version='1.0' encoding=\"UTF-8\"?>
 <?xml-stylesheelt type =\"text/xsl\" href=\"configuration.xsl\"?>
 <configuration> 
  <property> 
