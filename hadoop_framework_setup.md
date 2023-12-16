@@ -13,7 +13,7 @@ Update your Ubuntu Machine:
 ### Step 2:
 Run the dependencies installer 
 - Installs OpenSSH, Java
-- Downloads/Unpacks and places Hadoop 3.3.6 in the '/opt/hadoop/' directory
+- Downloads/Unpacks and places Hadoop 3.3.6 in the '/usr/local/hadoop/' directory
 
 ```wget https://raw.githubusercontent.com/NONAN23x/Resources/main/hadoop_stuff/dependencies-install.sh && bash dependencies-install.sh```
 
