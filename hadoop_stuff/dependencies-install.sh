@@ -31,14 +31,14 @@ download_and_verify_hadoop() {
   echo "Hadoop downloaded and verified successfully."
 
   # Extract Hadoop
-  if ! sudo tar xvf /tmp/hadoop.tar.gz -C /opt/; then
+  if ! sudo tar xvf /tmp/hadoop.tar.gz -C /usr/local/; then
     echo "Error: Extracting Hadoop failed."
     echo "Is yoru Internet OK!?"
     exit 1
   fi
 
   # Rename and change ownership
-  if ! sudo mv /opt/hadoop-${HADOOP_VERSION} /opt/hadoop && ! sudo chown -R hadoop:hadoop /opt/hadoop; then
+  if ! sudo mv /usr/local/hadoop-${HADOOP_VERSION} /usr/local/hadoop && ! sudo chown -R hadoop:hadoop /usr/local/hadoop; then
     echo "Error: Renaming or setting ownership failed."
     exit 1
   fi
@@ -58,7 +58,7 @@ fi
 # Check if Java is installed
 if ! dpkg -l default-jdk | grep -q '^ii'; then
   echo "Installing Java..."
-  sudo apt install default-jdk -y
+  sudo apt install default-jdk default-jre -y
 else
   echo "Java is already Installed!"
 fi
@@ -75,34 +75,25 @@ else
   echo "User 'hadoop' already exists."
 fi
 
-# Check if /opt/hadoop directory exists
-if [[ ! -d /opt/hadoop ]]; then
+# Check if /usr/hadoop directory exists
+if [[ ! -d /usr/local/hadoop ]]; then
   echo "Hadoop not installed or insufficient size, downloading..."
   download_and_verify_hadoop
 else
-  echo "/opt/hadoop directory already exists and meets size requirements, skipping download."
+  echo "/usr/local/hadoop directory already exists and meets size requirements, skipping download."
 fi
 
 
 # Check if extraction directory exists
-if [[ ! -d /opt/hadoop ]]; then
+if [[ ! -d /usr/local/hadoop ]]; then
   echo "Error: Extraction failed or directory missing."
   exit 1
 else
-  sudo mkdir -p /opt/hadoop/logs/
+  sudo mkdir -p /usr/local/hadoop/logs/
 fi
-echo "Hadoop successfully installed to /opt/hadoop"
+echo "Hadoop successfully installed to /usr/local/hadoop"
 
-sudo chown -R hadoop:sudo /opt/hadoop
-
-# Cleanup (optional)
-# Add error checking to the `rm` command
-if [[ ! -f /tmp/hadoop.tar.gz ]]; then
-  echo "Info: No need to remove temporary file /tmp/hadoop.tar.gz."
-else
-  rm /tmp/hadoop.tar.gz
-  echo "Temporary file /tmp/hadoop.tar.gz removed."
-fi
+sudo chown -R hadoop:sudo /usr/local/hadoop
 
 sleep 3
 clear

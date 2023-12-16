@@ -1,13 +1,13 @@
 # Hadoop Framework 3.3.6 Easy Deploy
 
-This guide utilises my two magical scripts: **dependencies-install.sh** and **hadoop-configure.sh** and leverages them both to for the deployment of Apache Hadoop Framework
+This guide utilises my two magical scripts: **dependencies-install.sh** and **hadoop-configure.sh** and leverages them both for the deployment of Apache Hadoop Framework
 
 -- -
 ### Step 1:
 Update your Ubuntu Machine:
 (Enter your password when prompted and hit enter)
 
-```sudo apt update && sudo apt upgrade```
+```sudo apt update && sudo apt upgrade -y```
 
 -- -
 ### Step 2:

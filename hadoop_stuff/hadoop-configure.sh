@@ -13,7 +13,7 @@ sudo chmod 640 ~/.ssh/authorized_keys
 
 # Escape special characters in variable values
 JAVA_HOME=/usr/lib/jvm/default-java
-HADOOP_HOME=/opt/hadoop
+HADOOP_HOME=/usr/local/hadoop
 HADOOP_INSTALL=$HADOOP_HOME
 HADOOP_MAPRED_HOME=$HADOOP_HOME
 HADOOP_COMMON_HOME=$HADOOP_HOME
@@ -50,9 +50,11 @@ fi
 ### Configuring Apache Hadoop
 
 hadoop_env_content="export JAVA_HOME=$JAVA_HOME"  
-# hadoop_class_path="export HADOOP_CLASSPATH+="' $HADOOP_HOME/lib/*.jar'""
+hadoop_class_path="export HADOOP_CLASSPATH+=\" $HADOOP_HOME/lib/*.jar'\""
 sudo echo $hadoop_env_content > $HADOOP_HOME/etc/hadoop/hadoop-env.sh
-# sudo echo $hadoop_class_path >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh
+sudo echo $hadoop_class_path >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh
+cd $HADOOP_HOME/lib/ && sudo wget https://jcenter.bintray.com/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar
+
 
 
 xml_content="<?xml version=\"1.0\" encoding=\"UTF-8\"?>
