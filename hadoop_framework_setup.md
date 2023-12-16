@@ -21,12 +21,15 @@ Run the dependencies installer
 
 -- -
 ### Step 3:
-- This is the second part of the proccess, here configuration of yarn-site.xml, core-site.xml, would be handled automatically by the script.
+- This is the second part of the proccess, here configuration of yarn-site.xml, core-site.xml, mapred-site.xml, hdfs-site.xml, hadoop-env.sh would be handled automatically by the script.
 - You only need to enter your user or hadoop user's password when prompted.
 
 ```wget https://raw.githubusercontent.com/NONAN23x/Resources/main/hadoop_stuff/hadoop-configure.sh && chmod +x hadoop-configure.sh && ./hadoop-configure.sh```
 
-- Now reboot your computer
+- You might be asked wheter or not you want to reformat the filesystem, in such case press Y and hit Enter
+  - `Re-format filesystem in Storage Directory root= /home/hadoop/hdfs/namenode; location= null ? (Y or N) Y`
+
+- It is recommended to reboot Ubuntu at this point, if you dont want to, simply close the terminal, and open a new one, then follow the rest of the guide
 
 -- -
 ### Step 4:

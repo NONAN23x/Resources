@@ -12,6 +12,7 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 sudo chmod 640 ~/.ssh/authorized_keys
 
 # Escape special characters in variable values
+JAVA_HOME=/usr/lib/jvm/default-java
 HADOOP_HOME=/opt/hadoop
 HADOOP_INSTALL=$HADOOP_HOME
 HADOOP_MAPRED_HOME=$HADOOP_HOME
@@ -29,15 +30,16 @@ PDSH_RCMD_TYPE=ssh
 # Check if the .bashrc file is writable
 if [[ -w ~/.bashrc ]]; then
   # Append the export lines to the .bashrc file
+  echo "export JAVA_HOME=$JAVA_HOME" >> ~/.bashrc
   echo "export HADOOP_HOME=$HADOOP_HOME" >> ~/.bashrc
   echo "export HADOOP_INSTALL=$HADOOP_INSTALL" >> ~/.bashrc
   echo "export HADOOP_MAPRED_HOME=$HADOOP_HOME" >> ~/.bashrc
   echo "export HADOOP_COMMON_HOME=$HADOOP_HOME" >> ~/.bashrc
   echo "export HADOOP_HDFS_HOME=$HADOOP_HOME" >> ~/.bashrc
-  echo "export HADOOP_CONF_DIR=$HADOOP_CONF_DIR" >> ~/.bashrc
-  echo "export HADOOP_OPTS=HADOOP_OPTS" >> ~/.bashrc
-  echo "export PDSH_RCMD_TYPE=$PDSH_RCMD_TYPE" >> ~/.bashrc
   echo "export YARN_HOME=$HADOOP_HOME" >> ~/.bashrc
+  echo "export HADOOP_CONF_DIR=$HADOOP_CONF_DIR" >> ~/.bashrc
+  echo "export HADOOP_OPTS=$HADOOP_OPTS" >> ~/.bashrc
+  echo "export PDSH_RCMD_TYPE=$PDSH_RCMD_TYPE" >> ~/.bashrc
   echo "export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native" >> ~/.bashrc
   echo "export PATH=$PATH" >> ~/.bashrc
   echo "Hadoop environment variables added to ~/.bashrc."
@@ -47,10 +49,10 @@ fi
 
 ### Configuring Apache Hadoop
 
-hadoop_env_content="export JAVA_HOME="/usr/lib/jvm/default-java/""  
+hadoop_env_content="export JAVA_HOME=$JAVA_HOME"  
 # hadoop_class_path="export HADOOP_CLASSPATH+="' $HADOOP_HOME/lib/*.jar'""
 sudo echo $hadoop_env_content > $HADOOP_HOME/etc/hadoop/hadoop-env.sh
-sudo echo $hadoop_class_path >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh
+# sudo echo $hadoop_class_path >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 
 
 xml_content="<configuration> 
@@ -90,7 +92,7 @@ hdfs_site_content="<configuration> <property>
       <name>dfs.data.dir</name>
       <value>file:///home/hadoop/hdfs/datanode</value>
    </property> </configuration>"
-sudo echo $hdfs_site_content > "$HADOOP_HOME/etc/hadoop/hdfs-site.xml"
+sudo echo $hdfs_site_content > $HADOOP_HOME/etc/hadoop/hdfs-site.xml
 echo "configured hdfs-site.xml"
 
 
