@@ -55,7 +55,9 @@ sudo echo $hadoop_env_content > $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 # sudo echo $hadoop_class_path >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 
 
-xml_content="<configuration> 
+xml_content="<xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheelt type ="text/xsl" href="configuration.xsl"?>
+<configuration> 
  <property> 
  <name>fs.defaultFS</name> 
  <value>hdfs://localhost:9000</value>  </property> 
@@ -80,7 +82,9 @@ sudo mkdir -p /home/hadoop/hdfs/{namenode,datanode}
 sudo chown -R hadoop:hadoop /home/hadoop/hdfs
 
 
-hdfs_site_content="<configuration> <property>
+hdfs_site_content="<xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheelt type ="text/xsl" href="configuration.xsl"?>
+<configuration> <property>
       <name>dfs.replication</name>
       <value>1</value>
    </property>
@@ -96,7 +100,9 @@ sudo echo $hdfs_site_content > $HADOOP_HOME/etc/hadoop/hdfs-site.xml
 echo "configured hdfs-site.xml"
 
 
-mapred_site_content="<configuration> 
+mapred_site_content="<xml version="1.0"?>
+<?xml-stylesheelt type ="text/xsl" href="configuration.xsl"?>
+<configuration> 
  <property> 
  <name>mapreduce.framework.name</name>  <value>yarn</value> 
  </property> 
@@ -110,7 +116,8 @@ sudo echo $mapred_site_content > $HADOOP_HOME/etc/hadoop/mapred-site.xml
 echo "configured mapred-site.xml"
 
 
-yarn_site_content="<configuration> 
+yarn_site_content="<xml version="1.0"?>
+<configuration> 
  <property> 
  <name>yarn.nodemanager.aux-services</name> 
  <value>mapreduce_shuffle</value> 

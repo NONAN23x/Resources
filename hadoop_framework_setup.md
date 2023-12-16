@@ -15,7 +15,7 @@ Run the dependencies installer
 - Installs OpenSSH, Java
 - Downloads/Unpacks and places Hadoop 3.3.6 in the '/opt/hadoop/' directory
 
-```wget https://raw.githubusercontent.com/NONAN23x/Resources/main/hadoop_stuff/dependencies-install.sh && chmod +x dependencies-install.sh && ./dependencies-install.sh```
+```wget https://raw.githubusercontent.com/NONAN23x/Resources/main/hadoop_stuff/dependencies-install.sh && bash dependencies-install.sh```
 
 - If this command is successful, you'll see hadoop user's prompt, if yes then proceed to step 3
 
@@ -24,7 +24,7 @@ Run the dependencies installer
 - This is the second part of the proccess, here configuration of yarn-site.xml, core-site.xml, mapred-site.xml, hdfs-site.xml, hadoop-env.sh would be handled automatically by the script.
 - You only need to enter your user or hadoop user's password when prompted.
 
-```wget https://raw.githubusercontent.com/NONAN23x/Resources/main/hadoop_stuff/hadoop-configure.sh && chmod +x hadoop-configure.sh && ./hadoop-configure.sh```
+```wget https://raw.githubusercontent.com/NONAN23x/Resources/main/hadoop_stuff/hadoop-configure.sh && bash hadoop-configure.sh```
 
 - You might be asked wheter or not you want to reformat the filesystem, in such case press Y and hit Enter
   - `Re-format filesystem in Storage Directory root= /home/hadoop/hdfs/namenode; location= null ? (Y or N) Y`
