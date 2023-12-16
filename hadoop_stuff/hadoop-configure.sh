@@ -55,7 +55,7 @@ sudo echo $hadoop_env_content > $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 # sudo echo $hadoop_class_path >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 
 
-xml_content="<xml version='1.0' encoding=\"UTF-8\"?>
+xml_content="<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <?xml-stylesheelt type =\"text/xsl\" href=\"configuration.xsl\"?>
 <configuration> 
  <property> 
@@ -82,7 +82,7 @@ sudo mkdir -p /home/hadoop/hdfs/{namenode,datanode}
 sudo chown -R hadoop:hadoop /home/hadoop/hdfs
 
 
-hdfs_site_content="<xml version=\"1.0\" encoding=\"UTF-8\"?>
+hdfs_site_content="<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <?xml-stylesheelt type =\"text/xsl\" href=\"configuration.xsl\"?>
 <configuration> <property>
       <name>dfs.replication</name>
@@ -100,7 +100,7 @@ sudo echo $hdfs_site_content > $HADOOP_HOME/etc/hadoop/hdfs-site.xml
 echo "configured hdfs-site.xml"
 
 
-mapred_site_content="<xml version=\"1.0\"?>
+mapred_site_content="<?xml version=\"1.0\"?>
 <?xml-stylesheelt type =\"text/xsl\" href=\"configuration.xsl\"?>
 <configuration> 
  <property> 
@@ -116,7 +116,7 @@ sudo echo $mapred_site_content > $HADOOP_HOME/etc/hadoop/mapred-site.xml
 echo "configured mapred-site.xml"
 
 
-yarn_site_content="<xml version=\"1.0\"?>
+yarn_site_content="<?xml version=\"1.0\"?>
 <configuration> 
  <property> 
  <name>yarn.nodemanager.aux-services</name> 
