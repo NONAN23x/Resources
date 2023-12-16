@@ -48,7 +48,7 @@ fi
 ### Configuring Apache Hadoop
 
 hadoop_env_content="export JAVA_HOME="/usr/lib/jvm/default-java/""  
-hadoop_class_path="export HADOOP_CLASSPATH+="' $HADOOP_HOME/lib/*.jar'""
+# hadoop_class_path="export HADOOP_CLASSPATH+="' $HADOOP_HOME/lib/*.jar'""
 sudo echo $hadoop_env_content > $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 sudo echo $hadoop_class_path >> $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 
