@@ -81,8 +81,8 @@ sudo echo $xml_content > $HADOOP_HOME/etc/hadoop/core-site.xml
 echo "Configured core-site.xml"
 
 
-sudo mkdir -p /home/hadoop/hdfs/{namenode,datanode}
-sudo chown -R hadoop:hadoop /home/hadoop/hdfs
+mkdir -p /home/hadoop/hdfs/{namenode,datanode}
+sudo rm -rf /tmp/hadoop*
 
 
 hdfs_site_content="<?xml version=\"1.0\" encoding=\"UTF-8\"?>
@@ -143,6 +143,8 @@ echo "You can visit http://localhost:9870/ to view the web page"
 echo "Info: run stop-all.sh to stop the hadoop framework"
 
 echo "running namenode format"
+
+sleep 1
 hdfs namenode -format
  
 
