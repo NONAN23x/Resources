@@ -56,9 +56,9 @@ else
 fi
 
 # Check if Java is installed
-if ! dpkg -l default-jdk | grep -q '^ii'; then
+if ! dpkg -l openjdk-11-jdk | grep -q '^ii'; then
   echo "Installing Java..."
-  sudo apt install default-jdk default-jre -y
+  sudo apt install openjdk-11-jdk -y
 else
   echo "Java is already Installed!"
 fi

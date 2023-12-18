@@ -13,7 +13,7 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 sudo chmod 640 ~/.ssh/authorized_keys
 
 # Escape special characters in variable values
-JAVA_HOME=/usr/lib/jvm/default-java
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 HADOOP_HOME=/usr/local/hadoop
 HADOOP_INSTALL=$HADOOP_HOME
 HADOOP_MAPRED_HOME=$HADOOP_HOME
