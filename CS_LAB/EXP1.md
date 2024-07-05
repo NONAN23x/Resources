@@ -1,12 +1,10 @@
----
-
 ### Tools Required:
 
-```sql
+```
 netcat whatweb nslookup nmap sherlock netdiscover dirb nikto angryipscanner whois
 ```
 
----
+-- -
 
 ### Tools that require manual installation:
 
@@ -21,7 +19,7 @@ netcat whatweb nslookup nmap sherlock netdiscover dirb nikto angryipscanner whoi
     ```
     
 
----
+-- -
 
 ### Lab Setup
 
@@ -33,37 +31,37 @@ netcat whatweb nslookup nmap sherlock netdiscover dirb nikto angryipscanner whoi
 > ```
 > 
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9241cffa-aa68-4892-bc14-163ea6c8344c/794ae605-c16c-4213-be69-6178ded87cc0/Untitled.png)
+![Screenshot](https://prod-files-secure.s3.us-west-2.amazonaws.com/9241cffa-aa68-4892-bc14-163ea6c8344c/794ae605-c16c-4213-be69-6178ded87cc0/Untitled.png)
 
 Run the above command to identify your ipv4 address, mine is `10.10.10.4`, so I will be using this subnet (10.10.10.x) for scanning.
 
 - My Metasploitable2 Machine is at: `10.10.10.10`
 
----
+-- -
 
 ### Commands
 
 - netcat
     
-    ```sql
+    ```
     nc 10.10.10.10 X # here x represents an open port (21, 22, 80, etc)
     ```
     
 - whatweb
     
-    ```sql
+    ```
     whatweb 10.10.10.10 -v
     ```
     
 - whois
     
-    ```sql
+    ```
     whois microsoft.com
     ```
     
 - nslookup
     
-    ```sql
+    ```
     nslookup google.com
     ```
     
@@ -71,36 +69,36 @@ Run the above command to identify your ipv4 address, mine is `10.10.10.4`, so I 
     
     Utilize the `-T4` flag for increased scanning speed
     
-    ```sql
+    ```
     nmap 10.10.10.10 -T4
     ```
     
-    ```sql
+    ```
     nmap 10.10.10.10 -sV -T4
     ```
     
 - sherlock
 Only run this against an account that you own/ or have permission to! I used `hacker` as a reference, not to encourage you to repeat this.
     
-    ```sql
+    ```
     sherlock hacker
     ```
     
 - netdiscover
     
-    ```sql
+    ```
     netdiscover -r 10.10.10.0/24
     ```
     
 - dirb
     
-    ```sql
+    ```
     dirb http://10.10.10.10/
     ```
     
 - nikto
     
-    ```sql
+    ```
     nikto -h http://10.10.10.10/
     ```
     
