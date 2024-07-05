@@ -31,7 +31,7 @@ netcat whatweb nslookup nmap sherlock netdiscover dirb nikto angryipscanner whoi
 > ```
 > 
 
-![Screenshot](https://prod-files-secure.s3.us-west-2.amazonaws.com/9241cffa-aa68-4892-bc14-163ea6c8344c/794ae605-c16c-4213-be69-6178ded87cc0/Untitled.png)
+![Screenshot](../misc/csExp1.png)
 
 Run the above command to identify your ipv4 address, mine is `10.10.10.4`, so I will be using this subnet (10.10.10.x) for scanning.
 
