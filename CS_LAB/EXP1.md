@@ -1,4 +1,4 @@
-### Tools Required:
+### Tools Used:
 
 ```
 netcat whatweb nslookup nmap sherlock netdiscover dirb nikto angryipscanner whois
