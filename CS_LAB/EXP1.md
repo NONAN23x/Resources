@@ -4,15 +4,17 @@
 netcat whatweb nslookup nmap sherlock netdiscover dirb nikto angryipscanner whois
 ```
 
+> Make sure that kali is updated before installing the tools mentioned below
+
 -- -
 
 ### Tools that require manual installation:
 
-- Install Angry IP Scanner for your operating system.
+- Install Angry IP Scanner for your operating system
     
     [Angry IP Scanner - Download for Windows, Mac or Linux](https://angryip.org/download/)
     
-- Download sherlock in kali linux
+- Install sherlock in kali linux
     
     ```shell-session
     sudo apt install -y sherlock
@@ -23,7 +25,7 @@ netcat whatweb nslookup nmap sherlock netdiscover dirb nikto angryipscanner whoi
 
 ### Lab Setup
 
-> Identify your Kali Machine’s IP Address, we use this IP to probe for alive hosts on the same subnet
+> **Identify your Kali Machine’s IP Address!!!**, we use this IP to probe for alive hosts on the same subnet
 > 
 > 
 > ```shell-session
