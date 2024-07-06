@@ -14,7 +14,7 @@ netcat whatweb nslookup nmap sherlock netdiscover dirb nikto angryipscanner whoi
     
 - Download sherlock in kali linux
     
-    ```sql
+    ```shell-session
     sudo apt install -y sherlock
     ```
     
@@ -26,7 +26,7 @@ netcat whatweb nslookup nmap sherlock netdiscover dirb nikto angryipscanner whoi
 > Identify your Kali Machine’s IP Address, we use this IP to probe for alive hosts on the same subnet
 > 
 > 
-> ```sql
+> ```shell-session
 > ip a show eth0
 > ```
 > 
@@ -41,31 +41,31 @@ Run the above command to identify your ipv4 address, mine is `10.10.10.4`, so I 
 
 ### Commands
 
-- netcat
+- netcat - Used to Fingerprint Services
     
     ```
     nc 10.10.10.10 X # here x represents an open port (21, 22, 80, etc)
     ```
     
-- whatweb
+- whatweb - Identify Web Technologies
     
     ```
     whatweb 10.10.10.10 -v
     ```
     
-- whois
+- whois - Query Registrar Records
     
     ```
     whois microsoft.com
     ```
     
-- nslookup
+- nslookup - Lookup Name Server Routing
     
     ```
     nslookup google.com
     ```
     
-- nmap
+- nmap - Powerful Network Mapper and Recon tool
     
     Utilize the `-T4` flag for increased scanning speed
     
@@ -77,30 +77,30 @@ Run the above command to identify your ipv4 address, mine is `10.10.10.4`, so I 
     nmap 10.10.10.10 -sV -T4
     ```
     
-- sherlock
-Only run this against an account that you own/ or have permission to! I used `hacker` as a reference, not to encourage you to repeat this.
+- sherlock - Social Presence Hunter
+  > Only run this against an account that you own/ or have permission to! I used `hacker` as a reference, not to encourage you to repeat this.
     
     ```
     sherlock hacker
     ```
     
-- netdiscover
+- netdiscover - Host Discovery Tool
     
     ```
     netdiscover -r 10.10.10.0/24
     ```
     
-- dirb
+- dirb - Content Discover Tool
     
     ```
     dirb http://10.10.10.10/
     ```
     
-- nikto
+- nikto - Web Recon Tool
     
     ```
     nikto -h http://10.10.10.10/
     ```
     
-- Angry IP Scanner
+- Angry IP Scanner - Host Discovery Tool
 It will automaticall fill up the IP range according to your eth0 interface, you just need to fire up the scan and wait for it to finish
