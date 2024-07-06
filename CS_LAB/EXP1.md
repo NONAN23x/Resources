@@ -42,6 +42,7 @@ Run the above command to identify your ipv4 address, mine is `10.10.10.4`, so I 
 -- -
 
 ### Commands
+- Dont go firing off these commands without understanding that `10.10.10.10` is for Metasploitable2 machine on **my setup!** Your scenario would be different!
 
 - netcat - Used to Fingerprint Services
     
