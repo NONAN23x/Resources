@@ -13,6 +13,12 @@ netcat whatweb nslookup nmap sherlock netdiscover dirb nikto angryipscanner whoi
 - Install Angry IP Scanner for your operating system
     
     [Angry IP Scanner - Download for Windows, Mac or Linux](https://angryip.org/download/)
+
+    Run the command below on linux
+  
+    ```shell-session
+    cd /tmp && wget https://github.com/angryip/ipscan/releases/download/3.9.1/ipscan_3.9.1_amd64.deb && sudo dpkg -i ipscan_3.9.1_amd64.deb
+    ```
     
 - Install sherlock in kali linux
     
